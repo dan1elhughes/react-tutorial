@@ -11,12 +11,20 @@ class App extends Component {
 			number: 5,
 		};
 
-		this.onButtonClick = this.onButtonClick.bind(this);
+		this.increment = this.increment.bind(this);
+		this.decrement = this.decrement.bind(this);
 	}
 
-	onButtonClick() {
+	increment() {
 		this.setState(prevState => {
 			const number = prevState.number + 1;
+			return { number };
+		});
+	}
+
+	decrement() {
+		this.setState(prevState => {
+			const number = prevState.number - 1;
 			return { number };
 		});
 	}
@@ -25,7 +33,8 @@ class App extends Component {
 		return (
 			<div className="App">
 				<p>App goes here!</p>
-				<button onClick={this.onButtonClick}>Click me!</button>
+				<button onClick={this.decrement}>Decrement!</button>
+				<button onClick={this.increment}>Increment!</button>
 				<Count number={this.state.number}/>
 			</div>
 		);
