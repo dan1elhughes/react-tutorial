@@ -12,10 +12,15 @@ class App extends Component {
 		};
 	}
 
+	onButtonClick() {
+		console.log('click!');
+	}
+
 	render() {
 		return (
 			<div className="App">
 				<p>App goes here!</p>
+				<button onClick={this.onButtonClick}>Click me!</button>
 				<Count number={this.state.number}/>
 			</div>
 		);
