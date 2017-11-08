@@ -15,8 +15,9 @@ class App extends Component {
 	}
 
 	onButtonClick() {
-		this.setState({
-			number: 6,
+		this.setState(prevState => {
+			const number = prevState.number + 1;
+			return { number };
 		});
 	}
 
