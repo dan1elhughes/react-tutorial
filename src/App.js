@@ -10,10 +10,14 @@ class App extends Component {
 		this.state = {
 			number: 5,
 		};
+
+		this.onButtonClick = this.onButtonClick.bind(this);
 	}
 
 	onButtonClick() {
-		console.log('click!');
+		this.setState({
+			number: 6,
+		});
 	}
 
 	render() {
