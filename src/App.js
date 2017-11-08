@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import Count from './components/Count/Count';
+import Controls from './components/Controls/Controls';
 
 class App extends Component {
 	constructor(props) {
@@ -11,18 +12,18 @@ class App extends Component {
 			number: 5,
 		};
 
-		this.increment = this.increment.bind(this);
-		this.decrement = this.decrement.bind(this);
+		this.handleIncrement = this.handleIncrement.bind(this);
+		this.handleDecrement = this.handleDecrement.bind(this);
 	}
 
-	increment() {
+	handleIncrement() {
 		this.setState(prevState => {
 			const number = prevState.number + 1;
 			return { number };
 		});
 	}
 
-	decrement() {
+	handleDecrement() {
 		this.setState(prevState => {
 			const number = prevState.number - 1;
 			return { number };
@@ -33,8 +34,10 @@ class App extends Component {
 		return (
 			<div className="App">
 				<p>App goes here!</p>
-				<button onClick={this.decrement}>Decrement!</button>
-				<button onClick={this.increment}>Increment!</button>
+				<Controls
+					onIncrement={this.handleIncrement}
+					onDecrement={this.handleDecrement}
+				/>
 				<Count number={this.state.number}/>
 			</div>
 		);
