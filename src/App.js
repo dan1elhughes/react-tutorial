@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import Hello from './components/Hello/Hello';
+import Count from './components/Count/Count';
 
 class App extends Component {
 	render() {
 		return (
 			<div className="App">
 				<p>App goes here!</p>
-				<Hello foo="hello"/>
-				<Hello foo="this"/>
-				<Hello foo="is"/>
-				<Hello foo="dog"/>
+				<Count number={5}/>
 			</div>
 		);
 	}
