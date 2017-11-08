@@ -3,6 +3,7 @@ import './App.css';
 
 import Count from './components/Count/Count';
 import Controls from './components/Controls/Controls';
+import Header from './components/Header/Header';
 
 class App extends Component {
 	constructor(props) {
@@ -33,7 +34,7 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				<p>App goes here!</p>
+				<Header>App goes here!</Header>
 				<Controls
 					onIncrement={this.handleIncrement}
 					onDecrement={this.handleDecrement}
